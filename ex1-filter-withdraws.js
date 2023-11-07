@@ -7,6 +7,8 @@
  */
 function filterWithdraws(movements) {
   // TODO: Implementame
+  const allNegativeNumbers = movements.filter ((n) => n < 0) ;
+  return allNegativeNumbers
 }
 
 // Caso de prueba 1: Array con varios movimientos de entrada y retirada.
@@ -19,7 +21,7 @@ const test2 = [200, 50, 100, 300];
 console.log("Caso de prueba 2:", filterWithdraws(test2));
 // Se espera que el resultado sea [] (ninguna retirada).
 
-// Caso de prueba 3: Array vacío.
+// Caso de prueba 3: Array un movimiento de entrada y uno de retirada.
 const test3 = [66, -11];
 console.log("Caso de prueba 3:", filterWithdraws(test3));
 // Se espera que el resultado sea [-11] .

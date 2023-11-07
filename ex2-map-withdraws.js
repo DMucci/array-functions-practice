@@ -5,8 +5,33 @@
  * Piensa: ¿Qué metodo de array nos va a permitir convertir cada elemento del array en otro elemento diferente?
  *
  * @param {array} movements Array de numbers de movimientos bancarios
- */
-function bankStatement(movements) {}
+ */ // 3 POSIBLES SOLUCIONES
+function bankStatement(movements) {
+
+    const statements = movements.map((n) => n < 0 ? `Whitdraw: ${n}` : `Deposit: ${n}`);
+    return statements;
+}
+function bankStatement(movements) {
+
+   const statements = movements.map(function (n) {
+        if (n < 0) {
+            return `Withdraw: ${n}`;
+        }
+        return `Deposit: ${n}`;
+    })
+    return statements
+}
+
+function bankStatementWithIf(movements) {
+    // 1. Pensad en que estructura JavaScript nos permite aplicar un condicional
+    const statements = movements.map((n) => {
+      if (n < 0) {
+        return `Withdraw: ${n}`;
+      }
+      return `Diposit: ${n}`;
+    });
+    return statements;
+  }
 
 // Caso de prueba 1: Array con varios movimientos de entrada y retirada.
 const test1 = [100, -50, 20, -30, 10];
